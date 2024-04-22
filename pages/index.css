@@ -13,3 +13,26 @@ body {
   background-color: #000;
   font-family: "Inter", sans-serif;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 40px 0 0;
+  width: 880px;
+}
+
+.header__logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  max-width: 173px;
+  width: 100%;
+}
+
+.header__line {
+  max-width: 880px;
+  width: 100%;
+  margin: 41px 0 0;
+}

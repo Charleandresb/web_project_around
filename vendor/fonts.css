@@ -13,6 +13,20 @@
 }
 
 @font-face {
+  src: url(../vendor/fonts/Inter-Medium.woff2) format("woff2"),
+    url(../vendor/fonts/Inter-Medium.ttf) format("truetype"),
+    url(../vendor/fonts/Inter-Medium.otf) format("opentype");
+  font-family: "Inter", sans-serif;
+  font-weight: medium;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
   src: url(../vendor/fonts/Inter-SemiBold.woff2) format("woff2"),
     url(../vendor/fonts/Inter-SemiBold.ttf) format("truetype"),
     url(../vendor/fonts/Inter-SemiBold.otf) format("opentype");

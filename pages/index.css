@@ -36,3 +36,69 @@ body {
   width: 100%;
   margin: 41px 0 0;
 }
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  width: 880px;
+  height: 120px;
+  margin: 0 auto;
+  padding: 40px 0 0;
+}
+
+.profile__avatar {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 120px;
+  width: 100%;
+}
+
+.profile__info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  width: 419px;
+  height: 77px;
+  margin: 18px 163px 25px 30px;
+}
+
+.profile__info-name {
+  color: white;
+  font-size: 42px;
+  line-height: 56px;
+  font-weight: 500;
+  margin: 0 17px 16px 0;
+  max-height: 44px;
+}
+
+.profile__info-button {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.profile__info-button:hover {
+  opacity: 0.5;
+}
+
+.profile__info-description {
+  color: white;
+  font-size: 18px;
+  line-height: 21.78px;
+  font-weight: 400;
+  margin: 0;
+  max-height: 17px;
+}
+
+.profile__add-button {
+  display: flex;
+  align-self: center;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.profile__add-button:hover {
+  opacity: 0.5;
+}

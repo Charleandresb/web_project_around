@@ -102,3 +102,289 @@ body {
 .profile__add-button:hover {
   opacity: 0.5;
 }
+
+.photo-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  width: 880px;
+  height: 756px;
+  margin: 0 auto;
+  padding: 50px 0 0;
+}
+
+.braies {
+  width: 282px;
+  height: 361px;
+  background-image: url(../images/Rect.png);
+}
+
+.braies__title {
+  color: black;
+  font-size: 24px;
+  line-height: 29.05px;
+  font-weight: 900;
+  position: absolute;
+  margin: 307px auto 26px 21px;
+}
+
+.braies__image-trash {
+  width: 18px;
+  height: 19.3px;
+  position: absolute;
+  margin: 18px 15px 323px 249px;
+  cursor: pointer;
+}
+
+.braies__image-trash:hover {
+  opacity: 0.5;
+}
+
+.braies__image-like {
+  width: 21px;
+  height: 19px;
+  position: absolute;
+  margin: 312px 18px 30px 243px;
+  cursor: pointer;
+}
+
+.braies__image-like:hover {
+  opacity: 0.5;
+}
+
+.braies__image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0 0;
+}
+
+.calvas {
+  width: 282px;
+  height: 361px;
+  background-image: url(../images/Rect.png);
+}
+
+.calvas__title {
+  color: black;
+  font-size: 24px;
+  line-height: 29.05px;
+  font-weight: 900;
+  position: absolute;
+  margin: 307px auto 26px 21px;
+}
+
+.calvas__image-trash {
+  width: 18px;
+  height: 19.3px;
+  position: absolute;
+  margin: 18px 15px 323px 249px;
+  cursor: pointer;
+}
+
+.calvas__image-trash:hover {
+  opacity: 0.5;
+}
+
+.calvas__image-like {
+  width: 21px;
+  height: 19px;
+  position: absolute;
+  margin: 312px 18px 30px 243px;
+  cursor: pointer;
+}
+
+.calvas__image-like:hover {
+  opacity: 0.5;
+}
+
+.calvas__image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0 0;
+}
+
+.louise {
+  width: 282px;
+  height: 361px;
+  background-image: url(../images/Rect.png);
+}
+
+.louise__title {
+  color: black;
+  font-size: 24px;
+  line-height: 29.05px;
+  font-weight: 900;
+  position: absolute;
+  margin: 307px auto 26px 21px;
+}
+
+.louise__image-trash {
+  width: 18px;
+  height: 19.3px;
+  position: absolute;
+  margin: 18px 15px 323px 249px;
+  cursor: pointer;
+}
+
+.louise__image-trash:hover {
+  opacity: 0.5;
+}
+
+.louise__image-like {
+  width: 21px;
+  height: 19px;
+  position: absolute;
+  margin: 312px 18px 30px 243px;
+  cursor: pointer;
+}
+
+.louise__image-like:hover {
+  opacity: 0.5;
+}
+
+.louise__image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0 0;
+}
+
+.latemar {
+  width: 282px;
+  height: 361px;
+  background-image: url(../images/Rect.png);
+}
+
+.latemar__title {
+  color: black;
+  font-size: 24px;
+  line-height: 29.05px;
+  font-weight: 900;
+  position: absolute;
+  margin: 307px auto 26px 21px;
+}
+
+.latemar__image-trash {
+  width: 18px;
+  height: 19.3px;
+  position: absolute;
+  margin: 18px 15px 323px 249px;
+  cursor: pointer;
+}
+
+.latemar__image-trash:hover {
+  opacity: 0.5;
+}
+
+.latemar__image-like {
+  width: 21px;
+  height: 19px;
+  position: absolute;
+  margin: 312px 18px 30px 243px;
+  cursor: pointer;
+}
+
+.latemar__image-like:hover {
+  opacity: 0.5;
+}
+
+.latemar__image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0 0;
+}
+
+.yellowstone {
+  width: 282px;
+  height: 361px;
+  background-image: url(../images/Rect.png);
+}
+
+.yellowstone__title {
+  color: black;
+  font-size: 24px;
+  line-height: 29.05px;
+  font-weight: 900;
+  position: absolute;
+  margin: 307px auto 26px 21px;
+  max-width: 226px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.yellowstone__image-trash {
+  width: 18px;
+  height: 19.3px;
+  position: absolute;
+  margin: 18px 15px 323px 249px;
+  cursor: pointer;
+}
+
+.yellowstone__image-trash:hover {
+  opacity: 0.5;
+}
+
+.yellowstone__image-like {
+  width: 21px;
+  height: 19px;
+  position: absolute;
+  margin: 312px 18px 30px 243px;
+  cursor: pointer;
+}
+
+.yellowstone__image-like:hover {
+  opacity: 0.5;
+}
+
+.yellowstone__image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0 0;
+}
+
+.yosemite {
+  width: 282px;
+  height: 361px;
+  background-image: url(../images/Rect.png);
+}
+
+.yosemite__title {
+  color: black;
+  font-size: 24px;
+  line-height: 29.05px;
+  font-weight: 900;
+  position: absolute;
+  margin: 307px auto 26px 21px;
+}
+
+.yosemite__image-trash {
+  width: 18px;
+  height: 19.3px;
+  position: absolute;
+  margin: 18px 15px 323px 249px;
+  cursor: pointer;
+}
+
+.yosemite__image-trash:hover {
+  opacity: 0.5;
+}
+
+.yosemite__image-like {
+  width: 21px;
+  height: 19px;
+  position: absolute;
+  margin: 312px 18px 30px 243px;
+  cursor: pointer;
+}
+
+.yosemite__image-like:hover {
+  opacity: 0.5;
+}
+
+.yosemite__image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0 0;
+}

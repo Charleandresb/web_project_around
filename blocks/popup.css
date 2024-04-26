@@ -114,9 +114,9 @@
   max-width: 358px;
   height: 28px;
   margin: 0 0 30px;
-  border-top: 0cap;
-  border-left: 0cap;
-  border-right: 0cap;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
 }
 
 @media screen and (max-width: 620px) {
@@ -129,9 +129,9 @@
   max-width: 358px;
   height: 28px;
   margin: 0 0 48px;
-  border-top: 0cap;
-  border-left: 0cap;
-  border-right: 0cap;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
 }
 
 @media screen and (max-width: 620px) {

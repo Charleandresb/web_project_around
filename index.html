@@ -20,19 +20,21 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img
-            src="./images/Jacques.png"
-            alt="Avatar Jacques"
-            class="profile__avatar"
-          />
-          <div class="profile__info">
-            <h1 class="profile__info-name">Jacques Cousteau</h1>
+          <div class="profile__section">
+            <img
+              src="./images/Jacques.png"
+              alt="Avatar Jacques"
+              class="profile__avatar"
+            />
+            <div class="profile__info">
+              <h1 class="profile__info-name">Jacques Cousteau</h1>
+              <p class="profile__info-description">Explorador</p>
+            </div>
             <img
               src="./images/Edit.svg"
               alt="Botón edit"
               class="profile__info-button"
             />
-            <p class="profile__info-description">Explorador</p>
           </div>
           <img
             src="./images/Add.svg"
@@ -163,12 +165,16 @@
                 type="text"
                 name="name"
                 placeholder="Nombre"
+                maxlength="24"
+                minlength="5"
                 class="popup__input-name"
               />
               <input
                 type="text"
                 name="about"
                 placeholder="Acerca de mi"
+                maxlength="60"
+                minlength="3"
                 class="popup__input-about"
               />
               <button type="submit" class="popup__button">Guardar</button>

@@ -40,10 +40,18 @@ body {
 .profile {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   width: 880px;
   height: 120px;
   margin: 0 auto;
   padding: 40px 0 0;
+}
+
+.profile__section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .profile__avatar {
@@ -55,11 +63,10 @@ body {
 
 .profile__info {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: baseline;
-  width: 419px;
+  margin: 0 17px 0 25px;
   height: 77px;
-  margin: 18px 163px 25px 30px;
 }
 
 .profile__info-name {
@@ -67,14 +74,14 @@ body {
   font-size: 42px;
   line-height: 56px;
   font-weight: 500;
-  margin: 0 17px 16px 0;
+  margin: 0 0 16px;
   max-height: 44px;
 }
 
 .profile__info-button {
   width: 24px;
   height: 24px;
-  margin: 0;
+  margin: 0 0 17px;
   cursor: pointer;
 }
 
@@ -93,7 +100,6 @@ body {
 
 .profile__add-button {
   display: flex;
-  align-self: center;
   width: 150px;
   height: 50px;
   cursor: pointer;

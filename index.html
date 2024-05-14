@@ -89,8 +89,47 @@
               />
               <button type="submit" class="popup__button">Guardar</button>
             </form>
+            <div class="popup__overlay"></div>
           </div>
-          <div class="popup__overlay"></div>
+        </section>
+        <section class="popup-add popup-add_opened">
+          <div class="popup-add__container">
+            <img
+              src="./images/CloseIcon.svg"
+              alt="Cerrar"
+              class="popup-add__close-icon"
+            />
+            <h3 class="popup-add__title">Nuevo lugar</h3>
+            <form class="popup-add__form">
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre"
+                maxlength="24"
+                minlength="3"
+                class="popup-add__input-name"
+              />
+              <input
+                type="text"
+                name="link"
+                placeholder="Image URL"
+                class="popup-add__input-link"
+              />
+              <button type="submit" class="popup-add__button">Crear</button>
+            </form>
+            <div class="popup-add__overlay"></div>
+          </div>
+        </section>
+        <section class="popup-image">
+          <div class="popup-image__container">
+            <img
+              src="./images/CloseIcon.svg"
+              alt="Cerrar"
+              class="popup-image__close-icon"
+            />
+            <img src="" alt="" class="popup-image__card" />
+            <h3 class="popup-image__title"></h3>
+            <div class="popup-image__overlay"></div>
         </section>
       </main>
       <footer class="footer">

@@ -1,3 +1,6 @@
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+
 const openFormButton = document.querySelector(".profile__info-button");
 const profileName = document.querySelector(".profile__info-name");
 const profileAbout = document.querySelector(".profile__info-description");
@@ -26,6 +29,8 @@ const popupOverlay = document.querySelector(".popup__overlay"); //Cerrar popupPr
 const popupAddOverlay = document.querySelector("#popup-overlay"); //Cerrar popupAdd
 const popupImageOverlay = document.querySelector(".popup-image__overlay"); //Cerrar popupImage
 
+const formElement = document.querySelectorAll(".popup__form");
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -53,32 +58,32 @@ const initialCards = [
   },
 ];
 
-function makeCards(name, link) {
-  const card = template.cloneNode(true).content.querySelector(".card");
-  const cardTitle = card.querySelector(".card__title");
-  const cardImage = card.querySelector(".card__image");
-  const cardTrash = card.querySelector(".card__image-trash");
-  const cardLike = card.querySelector(".card__image-like");
-  cardTrash.addEventListener("click", function () {
-    card.remove();
-  });
-  cardLike.addEventListener("click", function () {
-    cardLike.classList.toggle("card__image-like_active");
-  });
-  cardImage.addEventListener("click", function () {
-    popupImage.classList.add("popup-image__container_opened");
-    popupImageCard.src = link;
-    popupImageTitle.textContent = name;
-    popupImageCard.alt = name;
-  });
-  cardTitle.textContent = name;
-  cardImage.src = link;
-  cardImage.alt = name;
-  return card;
-}
+// function makeCards(name, link) {
+//   const card = template.cloneNode(true).content.querySelector(".card");
+//   const cardTitle = card.querySelector(".card__title");
+//   const cardImage = card.querySelector(".card__image");
+//   const cardTrash = card.querySelector(".card__image-trash");
+//   const cardLike = card.querySelector(".card__image-like");
+//   cardTrash.addEventListener("click", function () {
+//     card.remove();
+//   });
+//   cardLike.addEventListener("click", function () {
+//     cardLike.classList.toggle("card__image-like_active");
+//   });
+//   cardImage.addEventListener("click", function () {
+//     popupImage.classList.add("popup-image__container_opened");
+//     popupImageCard.src = link;
+//     popupImageTitle.textContent = name;
+//     popupImageCard.alt = name;
+//   });
+//   cardTitle.textContent = name;
+//   cardImage.src = link;
+//   cardImage.alt = name;
+//   return card;
+// }
 
 initialCards.forEach(function (item) {
-  const cardToEnd = makeCards(item.name, item.link);
+  const cardToEnd = new Card(item.name, item.link).generateCards();
   cardSpace.append(cardToEnd);
 });
 
@@ -117,7 +122,10 @@ popupAddOverlay.addEventListener("click", closeCardForm);
 
 cardForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
-  const cardToStar = makeCards(inputCardName.value, inputCardLink.value);
+  const cardToStar = new Card(
+    inputCardName.value,
+    inputCardLink.value
+  ).generateCards();
   cardSpace.prepend(cardToStar);
   closeCardForm();
 });
@@ -137,3 +145,14 @@ document.addEventListener("keydown", function (evt) {
     popupImage.classList.remove("popup-image__container_opened");
   }
 });
+
+const Validator = new FormValidator(formElement, {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error",
+});
+
+Validator.enableValidation();

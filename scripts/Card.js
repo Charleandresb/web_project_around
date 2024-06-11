@@ -18,6 +18,7 @@ export default class Card {
     this._cardTrash = this._card.querySelector(".card__image-trash");
     this._cardLike = this._card.querySelector(".card__image-like");
     this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
     this._cardTitle.textContent = this._name;
   }
   handleLike() {

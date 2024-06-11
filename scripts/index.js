@@ -1,35 +1,36 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
+import {
+  openProfileForm,
+  closeProfileForm,
+  openCardForm,
+  closeCardForm,
+} from "./utils.js";
 
 const openFormButton = document.querySelector(".profile__info-button");
 const profileName = document.querySelector(".profile__info-name");
 const profileAbout = document.querySelector(".profile__info-description");
 const closeFormButton = document.querySelector("#popup-close");
-const popupProfile = document.querySelector("#popup-profile");
 const formProfile = document.querySelector("#popup-form");
 const inputName = document.querySelector("#name-input");
 const inputAbout = document.querySelector("#about-input");
 //formulario editar perfil ^^
 const openCardFormButton = document.querySelector(".profile__add-button");
 const closeCardFormButton = document.querySelector("#popup-add-close");
-const popupAdd = document.querySelector("#popup-add");
 const cardForm = document.querySelector("#popup-add-form");
 const inputCardName = document.querySelector("#add-input");
 const inputCardLink = document.querySelector("#link-input");
 //formulario agregar cartas ^^
 const popupImage = document.querySelector(".popup-image__container");
 const closePopupImage = document.querySelector(".popup-image__close-icon");
-const popupImageCard = document.querySelector(".popup-image__card");
-const popupImageTitle = document.querySelector(".popup-image__title");
 //popup imagen cartas ^^
-const template = document.querySelector(".template-card");
 const cardSpace = document.querySelector(".photo-cards");
-//template cartas ^^
+//Espacio HTML para cartas ^^
 const popupOverlay = document.querySelector(".popup__overlay"); //Cerrar popupProfile
 const popupAddOverlay = document.querySelector("#popup-overlay"); //Cerrar popupAdd
 const popupImageOverlay = document.querySelector(".popup-image__overlay"); //Cerrar popupImage
 
-const formElement = document.querySelectorAll(".popup__form");
+const formElement = document.querySelectorAll(".popup__form"); //Selector de formularios
 
 const initialCards = [
   {
@@ -87,16 +88,6 @@ initialCards.forEach(function (item) {
   cardSpace.append(cardToEnd);
 });
 
-function openProfileForm(evt) {
-  popupProfile.classList.add("popup_opened");
-  inputName.value = profileName.textContent;
-  inputAbout.value = profileAbout.textContent;
-}
-
-function closeProfileForm(evt) {
-  popupProfile.classList.remove("popup_opened");
-}
-
 openFormButton.addEventListener("click", openProfileForm);
 closeFormButton.addEventListener("click", closeProfileForm);
 popupOverlay.addEventListener("click", closeProfileForm);
@@ -107,14 +98,6 @@ formProfile.addEventListener("submit", function (evt) {
   profileAbout.textContent = inputAbout.value;
   closeProfileForm();
 });
-
-function openCardForm(evt) {
-  popupAdd.classList.add("popup_opened");
-}
-
-function closeCardForm(evt) {
-  popupAdd.classList.remove("popup_opened");
-}
 
 openCardFormButton.addEventListener("click", openCardForm);
 closeCardFormButton.addEventListener("click", closeCardForm);

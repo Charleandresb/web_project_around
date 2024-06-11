@@ -6,6 +6,27 @@ montañas, parques y lagos, de esta y otras partes del mundo también.
 
 Programación de JavaScript:
 
+Programación orientada a objetos:
+
+Simplificar el código es una parte importante de este trabajo. A través de
+POO se transformó la función que crea cartas en una clase que consta con
+un constructor con sus parámetros correspondientes para asignar los nuevos
+valores (name y link) a las nuevas cartas. Esta clase actúa como una
+plantilla o molde con las características de fabrica de cartas.
+
+Se hizo el mismo trabajo de validación de formularios transformando el
+código de flujo de funciones en una clase. Alberga un constructor con dos
+parámetros; el primero contiene los formularios y el segundo los selectores
+con las clases de estos.
+
+Ambas clases son exportadas desde sus módulos e importadas en el archivo
+principal index.js que contiene el resto del código.
+
+El módulo utils.js contiene las funciones que se encargan de abrir y cerrar
+las ventanas emergentes de los formularios.
+
+Refactorizar fue clave para llevar a cabo este trabajo.
+
 Validación de formularios:
 
 Una buena experiencia de usuario es prioridad para una página web, los

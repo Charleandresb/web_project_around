@@ -79,6 +79,7 @@
   .profile__info {
     margin: 0;
     align-items: center;
+    padding-bottom: 12px;
   }
 }
 
@@ -87,20 +88,24 @@
   font-size: 42px;
   line-height: 56px;
   font-weight: 500;
-  margin: 0 0 16px;
-  max-height: 44px;
+  margin: 0;
+  max-width: 500px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 900px) {
   .profile__info-name {
     font-size: 32px;
-    margin: 0 0 8px;
+    height: 50px;
+    max-width: 380px;
   }
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 768px) {
   .profile__info-name {
-    margin: 0 0 4px;
+    max-width: 300px;
   }
 }
 
@@ -127,12 +132,22 @@
   line-height: 21.78px;
   font-weight: 400;
   margin: 0;
-  max-height: 17px;
+  max-width: 500px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 900px) {
   .profile__info-description {
     font-size: 14px;
+    max-width: 380px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .profile__info-description {
+    max-width: 282px;
   }
 }
 

@@ -1,8 +1,8 @@
 .photo-cards {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 282px 282px 282px;
+  grid-template-rows: auto;
   justify-content: space-between;
-  flex-wrap: wrap;
   row-gap: 30px;
   width: 880px;
   height: auto;
@@ -13,12 +13,14 @@
 @media screen and (max-width: 900px) {
   .photo-cards {
     width: 600px;
+    grid-template-columns: 282px 282px;
   }
 }
 
 @media screen and (max-width: 620px) {
   .photo-cards {
     width: 282px;
+    grid-template-columns: 282px;
   }
 }
 
@@ -26,6 +28,13 @@
   width: 282px;
   height: 361px;
   background-image: url(../images/Rect.png);
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  transition: all 500ms ease-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 .card__title {
@@ -77,6 +86,6 @@
 .card__image {
   width: 282px;
   height: 282px;
-  border-radius: 10px 10px 0 0;
+  object-fit: cover;
   cursor: pointer;
 }

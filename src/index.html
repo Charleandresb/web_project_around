@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Around U.S.</title>
+    <meta name="description" content="Alrededor de los Estados Unidos" />
+    <meta name="author" content="Charles" />
+    <meta
+      name="keywords"
+      content="Alrededor, EE.UU., Valles, Lagos, Montañas"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img
+          src="<%= require('../images/Logo.svg')%>"
+          alt="Logo"
+          class="header__logo"
+        />
+        <img
+          src="<%= require('../images/Line.png')%>"
+          alt="Line"
+          class="header__line"
+        />
+      </header>
+      <main class="content">
+        <section class="profile">
+          <div class="profile__section">
+            <img
+              src="<%= require('../images/Jacques.png')%>"
+              alt="Avatar Jacques"
+              class="profile__avatar"
+            />
+            <div class="profile__info">
+              <h1 class="profile__info-name">Jacques Cousteau</h1>
+              <p class="profile__info-description">Explorador</p>
+            </div>
+            <img
+              src="<%= require('../images/Edit.svg')%>"
+              alt="Botón edit"
+              class="profile__info-button"
+            />
+          </div>
+          <img
+            src="<%= require('../images/Add.svg')%>"
+            alt="Botón add"
+            class="profile__add-button"
+          />
+        </section>
+        <section class="photo-cards"></section>
+
+        <template class="template-card">
+          <div class="card">
+            <h2 class="card__title"></h2>
+            <img
+              src="<%= require('../images/Like.svg')%>"
+              alt="Me gusta"
+              class="card__image-like"
+            />
+            <img
+              src="<%= require('../images/Trash.svg')%>"
+              alt="Eliminar"
+              class="card__image-trash"
+            />
+            <img src=" " alt="" class="card__image" />
+          </div>
+        </template>
+
+        <section class="popup" id="popup-profile">
+          <div class="popup__container">
+            <img
+              src="<%= require('../images/CloseIcon.svg')%>"
+              alt="Cerrar"
+              class="popup__close-icon"
+              id="popup-close"
+            />
+            <form class="popup__form" id="popup-form" novalidate>
+              <h3 class="popup__form-title">Editar perfil</h3>
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre *"
+                maxlength="40"
+                minlength="2"
+                class="popup__input"
+                id="name-input"
+                required
+              />
+              <span class="popup__error name-input-error"></span>
+              <input
+                type="text"
+                name="about"
+                placeholder="Acerca de mi *"
+                maxlength="200"
+                minlength="2"
+                class="popup__input"
+                id="about-input"
+                required
+              />
+              <span class="popup__error about-input-error"></span>
+              <p class="popup__required">Ambos campos son requeridos (*)</p>
+              <button type="submit" class="popup__button">Guardar</button>
+            </form>
+            <div class="popup__overlay"></div>
+          </div>
+        </section>
+        <section class="popup" id="popup-add">
+          <div class="popup__container">
+            <img
+              src="<%= require('../images/CloseIcon.svg')%>"
+              alt="Cerrar"
+              class="popup__close-icon"
+              id="popup-add-close"
+            />
+            <form class="popup__form" id="popup-add-form" novalidate>
+              <h3 class="popup__form-title">Nuevo lugar</h3>
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre *"
+                maxlength="30"
+                minlength="2"
+                class="popup__input"
+                id="add-input"
+                required
+              />
+              <span class="popup__error add-input-error"></span>
+              <input
+                type="url"
+                name="link"
+                placeholder="Imagen URL *"
+                class="popup__input"
+                id="link-input"
+                required
+              />
+              <span class="popup__error link-input-error"></span>
+              <p class="popup__required">Ambos campos son requeridos (*)</p>
+              <button type="submit" class="popup__button">Crear</button>
+            </form>
+            <div class="popup__overlay" id="popup-overlay"></div>
+          </div>
+        </section>
+        <section class="popup-image">
+          <div class="popup-image__container">
+            <img
+              src="<%= require('../images/CloseIcon.svg')%>"
+              alt="Cerrar"
+              class="popup-image__close-icon"
+            />
+            <img src=" " alt="" class="popup-image__card" />
+            <h3 class="popup-image__title"></h3>
+            <div class="popup-image__overlay"></div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2024 Charles</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,12 +1,7 @@
 import "./index.css";
 import Card from "../scripts/Card.js";
 import FormValidator from "../scripts/FormValidator.js";
-import {
-  openProfileForm,
-  closeProfileForm,
-  openCardForm,
-  closeCardForm,
-} from "../scripts/utils.js";
+import PopupWithForm from "../scripts/PopupWithForm.js";
 
 const openFormButton = document.querySelector(".profile__info-button");
 const profileName = document.querySelector(".profile__info-name");
@@ -27,8 +22,8 @@ const closePopupImage = document.querySelector(".popup-image__close-icon");
 //popup imagen cartas ^^
 const cardSpace = document.querySelector(".photo-cards");
 //Espacio HTML para cartas ^^
-const popupOverlay = document.querySelector(".popup__overlay"); //Cerrar popupProfile
-const popupAddOverlay = document.querySelector("#popup-overlay"); //Cerrar popupAdd
+const popupOverlay = document.querySelector("#popup-profile-overlay"); //Cerrar popupProfile
+const popupAddOverlay = document.querySelector("#popup-cards-overlay"); //Cerrar popupAdd
 const popupImageOverlay = document.querySelector(".popup-image__overlay"); //Cerrar popupImage
 
 const formElement = document.querySelectorAll(".popup__form"); //Selector de formularios
@@ -89,30 +84,47 @@ initialCards.forEach(function (item) {
   cardSpace.append(cardToEnd);
 });
 
-openFormButton.addEventListener("click", openProfileForm);
-closeFormButton.addEventListener("click", closeProfileForm);
-popupOverlay.addEventListener("click", closeProfileForm);
-
-formProfile.addEventListener("submit", function (evt) {
-  evt.preventDefault();
-  profileName.textContent = inputName.value;
-  profileAbout.textContent = inputAbout.value;
-  closeProfileForm();
+const popupProfile = new PopupWithForm("#popup-profile", (inputs) => {
+  profileName.textContent = inputs.name;
+  profileAbout.textContent = inputs.about;
 });
 
-openCardFormButton.addEventListener("click", openCardForm);
-closeCardFormButton.addEventListener("click", closeCardForm);
-popupAddOverlay.addEventListener("click", closeCardForm);
-
-cardForm.addEventListener("submit", function (evt) {
-  evt.preventDefault();
-  const cardToStar = new Card(
-    inputCardName.value,
-    inputCardLink.value
-  ).generateCards();
-  cardSpace.prepend(cardToStar);
-  closeCardForm();
+const popupCards = new PopupWithForm("#popup-add", (inputs) => {
+  const newCard = new Card(inputs.title, inputs.link).generateCards();
+  cardSpace.prepend(newCard);
 });
+
+popupProfile.setEventListeners();
+popupCards.setEventListeners();
+
+openFormButton.addEventListener("click", () => {
+  popupProfile.open();
+});
+// closeFormButton.addEventListener("click", closeProfileForm);
+// popupOverlay.addEventListener("click", closeProfileForm);
+
+// formProfile.addEventListener("submit", function (evt) {
+//   evt.preventDefault();
+//   profileName.textContent = inputName.value;
+//   profileAbout.textContent = inputAbout.value;
+//   closeProfileForm();
+// });
+
+openCardFormButton.addEventListener("click", () => {
+  popupCards.open();
+});
+// closeCardFormButton.addEventListener("click", closeCardForm);
+// popupAddOverlay.addEventListener("click", closeCardForm);
+
+// cardForm.addEventListener("submit", function (evt) {
+//   evt.preventDefault();
+//   const cardToStar = new Card(
+//     inputCardName.value,
+//     inputCardLink.value
+//   ).generateCards();
+//   cardSpace.prepend(cardToStar);
+//   closeCardForm();
+// });
 
 closePopupImage.addEventListener("click", function () {
   popupImage.classList.remove("popup-image__container_opened");
@@ -122,13 +134,13 @@ popupImageOverlay.addEventListener("click", function () {
   popupImage.classList.remove("popup-image__container_opened");
 });
 
-document.addEventListener("keydown", function (evt) {
-  if (evt.key === "Escape") {
-    closeProfileForm();
-    closeCardForm();
-    popupImage.classList.remove("popup-image__container_opened");
-  }
-});
+// document.addEventListener("keydown", function (evt) {
+//   if (evt.key === "Escape") {
+//     closeProfileForm();
+//     closeCardForm();
+//     popupImage.classList.remove("popup-image__container_opened");
+//   }
+// });
 
 const Validator = new FormValidator(formElement, {
   formSelector: ".popup__form",

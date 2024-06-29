@@ -32,6 +32,7 @@ export default class FormValidator {
     });
   }
   _toggleButtonState(inputList, buttonElement) {
+    console.log(inputList);
     if (this._hasInvalidInput(inputList)) {
       buttonElement.classList.add(this._settings.inactiveButtonClass);
     } else {
@@ -48,7 +49,7 @@ export default class FormValidator {
     this._toggleButtonState(inputList, buttonElement);
 
     inputList.forEach((inputElement) => {
-      inputElement.addEventListener("input", () => {
+      inputElement.addEventListener("change", () => {
         this._checkInputValidity(inputElement, formElement);
         this._toggleButtonState(inputList, buttonElement);
       });

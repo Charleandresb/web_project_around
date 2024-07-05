@@ -170,19 +170,19 @@
 }
 
 .popup-image {
+  display: none;
+}
+
+.popup-image_opened {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .popup-image__container {
-  display: none;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 12%;
-}
-
-.popup-image__container_opened {
-  display: block;
 }
 
 .popup-image__close-icon {

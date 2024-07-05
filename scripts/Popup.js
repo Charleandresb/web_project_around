@@ -1,15 +1,12 @@
-const closeProfileFormButton = document.querySelector("#popup-close");
-const closeCardFormButton = document.querySelector("#popup-add-close");
-const popupProfileOverlay = document.querySelector("#popup-profile-overlay"); //Cerrar popupProfile
-const popupCardsOverlay = document.querySelector("#popup-cards-overlay"); //Cerrar popupCards
-
 export default class Popup {
   constructor(popupSelector) {
     this._popupElement = document.querySelector(popupSelector);
+    this._handleEscClose = this._handleEscClose.bind(this);
   }
 
   open() {
     this._popupElement.classList.add("popup_opened");
+    document.addEventListener("keydown", this._handleEscClose);
   }
 
   close() {
@@ -23,19 +20,14 @@ export default class Popup {
   }
 
   setEventListeners() {
-    closeProfileFormButton.addEventListener("click", () => {
+    const closeButton = this._popupElement.querySelector(".popup__close-icon");
+    const closeOverlay = this._popupElement.querySelector(".popup__overlay");
+
+    closeButton.addEventListener("click", () => {
       this.close();
     });
 
-    closeCardFormButton.addEventListener("click", () => {
-      this.close();
-    });
-
-    popupProfileOverlay.addEventListener("click", () => {
-      this.close();
-    });
-
-    popupCardsOverlay.addEventListener("click", () => {
+    closeOverlay.addEventListener("click", () => {
       this.close();
     });
   }

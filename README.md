@@ -1,31 +1,51 @@
 # Tripleten web_project_around
 
 Este proyecto se trata de un viaje alrededor de los Estados Unidos. Donde
-nuestro explorador Jacques Cousteau comparte algunas de sus fotografías de
+el explorador Jacques Cousteau comparte algunas de sus fotografías de
 montañas, parques y lagos, de esta y otras partes del mundo también.
 
 Programación de JavaScript:
 
-Programación orientada a objetos:
+Programación orientada a objetos y relaciones entre clases:
 
-Simplificar el código es una parte importante de este trabajo. A través de
-POO se transformó la función que crea cartas en una clase que consta con
-un constructor con sus parámetros correspondientes para asignar los nuevos
-valores (name y link) a las nuevas cartas. Esta clase actúa como una
-plantilla o molde con las características de fabrica de cartas.
+Se crearon cinco nuevas clases.
 
-Se hizo el mismo trabajo de validación de formularios transformando el
-código de flujo de funciones en una clase. Alberga un constructor con dos
-parámetros; el primero contiene los formularios y el segundo los selectores
-con las clases de estos.
+Popup:
+Esta es la clase padre encargada de aplicar la herencia a sus clases hijas. Lleva
+en su constructor el selector de las className de las ventanas emergentes
+guardado en una propiedad. Cuenta con un método "open" que agrega el modificador
+que muestra el modal, y uno "close" que lo remueve. También tiene un método
+con la lógica para cerrar los popups presionando la tecla "Escape" y uno que
+almacena los eventos click de cerrar.
 
-Ambas clases son exportadas desde sus módulos e importadas en el archivo
-principal index.js que contiene el resto del código.
+PopupWithForm:
+Es una extención de la clase Popup, contiene un método encargado de obtener
+los valores de los campos de entrada de los formularios. Aplica el polimorfismo
+en sus métodos; "open" para mostrar la información del usuario en el
+formulario de perfil, "close" para resetear los formularios, y "setEventListeners"
+para las características del evento "submit".
 
-El módulo utils.js contiene las funciones que se encargan de abrir y cerrar
-las ventanas emergentes de los formularios.
+PopupWithImage:
+Otra clase hija de Popup. Al igual que PopupWithForm, hereda la propiedad
+que guarda el selector de popups. Esta clase tiene sus propios métodos, el
+método "open" en particular es el responsable de dar los valores adecuados
+a los atributos de imagen y título del modal que muestra las fotos.
 
-Refactorizar fue clave para llevar a cabo este trabajo.
+Section:
+Esta clase se encarga de renderizar los elementos de un array, ejecutar la
+función "renderer" por cada uno de ellos y agregarlos al DOM. En este caso en
+particular, renderiza el array que contiene las propiedades de las cartas
+iniciales de la página; selecciona el contenedor que muestra un grid de cartas.
+
+UserInfo:
+Sus propiedades y métodos seleccionan el contenido de texto de los elementos de
+nombre y oficio del usuario. A través de la clase PopupWithForm, el usuario puede
+modificar el perfil y su información también se mostrará el formulario abierto.
+
+Estas clases interactúan entre si a través de sus instancias en el módulo
+principal index.js, utilizando la metodología del acoplamiento bajo. Las clases
+Section y userInfo son independientes y reutilizables, capaces de obtener
+datos de cualquier objeto, renderizarlos y agregarlos a la página.
 
 Validación de formularios:
 
@@ -47,7 +67,12 @@ propiedades son las clases que se deben seleccionar. Gracias a este objeto,
 propiedades, valores y parámetros se crea un importante flujo entre las
 funciones que permiten la validación.
 
-Nueva funcionalidad:
+Se hizo el mismo trabajo de validación de formularios transformando el
+código de flujo de funciones en una clase. Alberga un constructor con dos
+parámetros; el primero contiene los formularios y el segundo los selectores
+con las clases de estos.
+
+Funcionalidad "Cerrar":
 
 Las ventanas emergentes se pueden cerrar al hacer click en el overlay negro
 con baja opacidad que actúa como fondo.
@@ -61,7 +86,7 @@ Interactividad:
 Perfil editable, nombre y descripción.
 
 Una serie de seis tarjetas principales. Un array contiene las propiedades
-de nombre y enlace correspondientes para cada una de las tarjetas.
+de nombres y links correspondientes para cada una de las tarjetas.
 
 El usuario puede agregar sus propias tarjetas personalizadas.
 

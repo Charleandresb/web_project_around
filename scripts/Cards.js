@@ -1,7 +1,4 @@
 const template = document.querySelector(".template-card");
-const popupImageCard = document.querySelector(".popup-image__card");
-const popupImageTitle = document.querySelector(".popup-image__title");
-const popupImage = document.querySelector(".popup-image");
 
 export default class Card {
   constructor(name, link, handleCardClick) {
@@ -35,10 +32,6 @@ export default class Card {
     });
     this._cardImage.addEventListener("click", () => {
       this.handleCardClick();
-      // popupImage.classList.add("popup-image_opened");
-      // popupImageCard.src = this._link;
-      // popupImageTitle.textContent = this._name;
-      // popupImageCard.alt = this._name;
     });
   }
   generateCards() {

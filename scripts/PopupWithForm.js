@@ -16,6 +16,20 @@ export default class PopupWithForm extends Popup {
     return this.formValues;
   }
 
+  open(getUserInfo) {
+    super.open();
+    const item = getUserInfo();
+    if (this._formElement.id === "popup-form") {
+      this._inputList[0].value = item.userName;
+      this._inputList[1].value = item.userJob;
+    }
+  }
+
+  close() {
+    super.close();
+    this._formElement.reset();
+  }
+
   setEventListeners() {
     super.setEventListeners();
     this._formElement.addEventListener("submit", (evt) => {

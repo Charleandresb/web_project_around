@@ -1,10 +1,34 @@
 # Tripleten web_project_around
 
 Este proyecto se trata de un viaje alrededor de los Estados Unidos. Donde
-el explorador Jacques Cousteau comparte algunas de sus fotografías de
+el usuario puede compartir algunas de sus fotografías de
 montañas, parques y lagos, de esta y otras partes del mundo también.
 
 Programación de JavaScript:
+
+JavaScript asincrono y trabajo con la API:
+
+Se ha establecido la conexión con el servidor, la API que almacena, provee y
+recibe la información necesaria para nuestra página web.
+
+Se creó la clase Api, la cual está encargada de hacer todas las peticiones
+a través de sus métodos. Se obtienen las cartas iniciales, la información del
+usuario, se edita su perfil, tanto el nombre, la descripción y el avatar. El
+usuario también puede agregar una nueva carta con su respectivo id y borrarla
+a través del mismo con las peticiones correspondientes a la API. La misma
+metodología aplica para agregar y quitar "likes".
+
+La asincronía se controla por medio de una palabra en los botones de los
+popups con formularios, la cual informa al usuario qué esta sucediendo mientras
+el servidor hace llegar la información necesaria. Esto brinda una mejor
+experiencia para el usuario al interactuar con la página.
+
+Se agregó un nuevo popup con la clase PopupWithConfirmation para preguntar
+al usuario si está seguro de eliminar su carta, ya que será eliminada de la API.
+Cada carta creada tiene su propio id en la propiedad owner, al compararlo con el
+id del usuario, si estos no son iguales, no aparece el icono de bote de basura
+para borrar en la carta; esto nos permite eliminar únicamente las cartas
+creadas por el propio usuario y no las de otros usuarios.
 
 Programación orientada a objetos y relaciones entre clases:
 

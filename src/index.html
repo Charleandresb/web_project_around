@@ -28,14 +28,17 @@
       <main class="content">
         <section class="profile">
           <div class="profile__section">
-            <img
-              src="<%= require('../images/Jacques.png')%>"
-              alt="Avatar Jacques"
-              class="profile__avatar"
-            />
+            <div class="profile__section-container">
+              <img
+                src="<%= require('../images/Lápiz.png')%>"
+                alt="editar"
+                class="profile__avatar-edit"
+              />
+              <img src=" " alt="avatar" class="profile__avatar" />
+            </div>
             <div class="profile__info">
-              <h1 class="profile__info-name">Jacques Cousteau</h1>
-              <p class="profile__info-description">Explorador</p>
+              <h1 class="profile__info-name"></h1>
+              <p class="profile__info-description"></p>
             </div>
             <img
               src="<%= require('../images/Edit.svg')%>"
@@ -49,6 +52,7 @@
             class="profile__add-button"
           />
         </section>
+
         <section class="photo-cards"></section>
 
         <template class="template-card">
@@ -65,93 +69,143 @@
               class="card__image-trash"
             />
             <img src=" " alt="" class="card__image" />
+            <span class="card__like-number"></span>
           </div>
         </template>
 
-        <section class="popup" id="popup-profile">
-          <div class="popup__container">
-            <img
-              src="<%= require('../images/CloseIcon.svg')%>"
-              alt="Cerrar"
-              class="popup__close-icon"
-              id="popup-close"
-            />
-            <form class="popup__form" id="popup-form" novalidate>
-              <h3 class="popup__form-title">Editar perfil</h3>
-              <input
-                type="text"
-                name="name"
-                placeholder="Nombre *"
-                maxlength="40"
-                minlength="2"
-                class="popup__input"
-                id="name-input"
-                required
+        <section class="popup-section">
+          <div class="popup" id="popup-profile">
+            <div class="popup__container">
+              <img
+                src="<%= require('../images/CloseIcon.svg')%>"
+                alt="Cerrar"
+                class="popup__close-icon"
+                id="popup-close"
               />
-              <span class="popup__error name-input-error"></span>
-              <input
-                type="text"
-                name="about"
-                placeholder="Acerca de mi *"
-                maxlength="200"
-                minlength="2"
-                class="popup__input"
-                id="about-input"
-                required
-              />
-              <span class="popup__error about-input-error"></span>
-              <p class="popup__required">Ambos campos son requeridos (*)</p>
-              <button type="submit" class="popup__button">Guardar</button>
-            </form>
-            <div class="popup__overlay" id="popup-profile-overlay"></div>
+              <form class="popup__form" id="popup-form" novalidate>
+                <h3 class="popup__form-title">Editar perfil</h3>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nombre *"
+                  maxlength="40"
+                  minlength="2"
+                  class="popup__input"
+                  id="name-input"
+                  required
+                />
+                <span class="popup__error name-input-error"></span>
+                <input
+                  type="text"
+                  name="about"
+                  placeholder="Acerca de mi *"
+                  maxlength="200"
+                  minlength="2"
+                  class="popup__input"
+                  id="about-input"
+                  required
+                />
+                <span class="popup__error about-input-error"></span>
+                <p class="popup__required">Ambos campos son requeridos (*)</p>
+                <button type="submit" class="popup__button"></button>
+              </form>
+              <div class="popup__overlay" id="popup-profile-overlay"></div>
+            </div>
           </div>
-        </section>
-        <section class="popup" id="popup-add">
-          <div class="popup__container">
-            <img
-              src="<%= require('../images/CloseIcon.svg')%>"
-              alt="Cerrar"
-              class="popup__close-icon"
-              id="popup-add-close"
-            />
-            <form class="popup__form" id="popup-add-form" novalidate>
-              <h3 class="popup__form-title">Nuevo lugar</h3>
-              <input
-                type="text"
-                name="title"
-                placeholder="Nombre *"
-                maxlength="30"
-                minlength="2"
-                class="popup__input"
-                id="add-input"
-                required
+
+          <div class="popup" id="popup-add">
+            <div class="popup__container">
+              <img
+                src="<%= require('../images/CloseIcon.svg')%>"
+                alt="Cerrar"
+                class="popup__close-icon"
+                id="popup-add-close"
               />
-              <span class="popup__error add-input-error"></span>
-              <input
-                type="url"
-                name="link"
-                placeholder="Imagen URL *"
-                class="popup__input"
-                id="link-input"
-                required
-              />
-              <span class="popup__error link-input-error"></span>
-              <p class="popup__required">Ambos campos son requeridos (*)</p>
-              <button type="submit" class="popup__button">Crear</button>
-            </form>
-            <div class="popup__overlay" id="popup-cards-overlay"></div>
+              <form class="popup__form" id="popup-add-form" novalidate>
+                <h3 class="popup__form-title">Nuevo lugar</h3>
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Nombre *"
+                  maxlength="30"
+                  minlength="2"
+                  class="popup__input"
+                  id="add-input"
+                  required
+                />
+                <span class="popup__error add-input-error"></span>
+                <input
+                  type="url"
+                  name="link"
+                  placeholder="Imagen URL *"
+                  class="popup__input"
+                  id="link-input"
+                  required
+                />
+                <span class="popup__error link-input-error"></span>
+                <p class="popup__required">Ambos campos son requeridos (*)</p>
+                <button
+                  type="submit"
+                  class="popup__button"
+                  id="popup-button-card"
+                ></button>
+              </form>
+              <div class="popup__overlay" id="popup-avatar-overlay"></div>
+            </div>
           </div>
-        </section>
-        <section class="popup-image">
-          <div class="popup-image__container">
-            <img
-              src="<%= require('../images/CloseIcon.svg')%>"
-              alt="Cerrar"
-              class="popup-image__close-icon"
-            />
-            <img src=" " alt="" class="popup-image__card" />
-            <h3 class="popup-image__title"></h3>
-            <div class="popup-image__overlay"></div>
+
+          <div class="popup" id="popup-avatar">
+            <div class="popup__container">
+              <img
+                src="<%= require('../images/CloseIcon.svg')%>"
+                alt="Cerrar"
+                class="popup__close-icon"
+                id="popup-close"
+              />
+              <form class="popup__form" id="popup-avatar-form" novalidate>
+                <h3 class="popup__form-title">Cambiar foto de perfil</h3>
+                <input
+                  type="url"
+                  name="avatar"
+                  placeholder="Imagen de perfil URL *"
+                  class="popup__input"
+                  id="avatar-input"
+                  required
+                />
+                <span class="popup__error avatar-input-error"></span>
+                <p class="popup__required">Único campo requerido (*)</p>
+                <button type="submit" class="popup__button"></button>
+              </form>
+              <div class="popup__overlay" id="popup-profile-overlay"></div>
+            </div>
+          </div>
+
+          <div class="popup-image">
+            <div class="popup-image__container">
+              <img
+                src="<%= require('../images/CloseIcon.svg')%>"
+                alt="Cerrar"
+                class="popup-image__close-icon"
+              />
+              <img src=" " alt="" class="popup-image__card" />
+              <h3 class="popup-image__title"></h3>
+              <div class="popup-image__overlay"></div>
+            </div>
+          </div>
+
+          <div class="popup-remove">
+            <div class="popup-remove__container">
+              <img
+                src="<%= require('../images/CloseIcon.svg')%>"
+                alt="Cerrar"
+                class="popup-remove__close-icon"
+              />
+              <form class="popup-remove__confirm">
+                <h3 class="popup-remove__title">¿Estás segura/o?</h3>
+                <button type="submit" class="popup-remove__button"></button>
+              </form>
+              <div class="popup-remove__overlay"></div>
+            </div>
           </div>
         </section>
       </main>

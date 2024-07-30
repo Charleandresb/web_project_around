@@ -2,8 +2,6 @@ export default class FormValidator {
   constructor(formElement, settings) {
     this._formElement = formElement;
     this._settings = settings;
-    console.log(formElement);
-    console.log(settings);
   }
   _showInputError(inputElement, errorMessage, formElement) {
     this._errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -32,7 +30,6 @@ export default class FormValidator {
     });
   }
   _toggleButtonState(inputList, buttonElement) {
-    console.log(inputList);
     if (this._hasInvalidInput(inputList)) {
       buttonElement.classList.add(this._settings.inactiveButtonClass);
     } else {
